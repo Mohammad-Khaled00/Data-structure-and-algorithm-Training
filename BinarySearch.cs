@@ -5,10 +5,7 @@
        or Write not Found if the array did not contain the target value */
     internal class BinarySearch
     {
-        public BinarySearch()
-        {
-            
-        }
+        public BinarySearch(){}
         public int[] Array { get; set; }
         public int Target { get; set; }
         public void DoBinarySearch(int[] Array, int Target)
@@ -25,8 +22,8 @@
                 time += 1;
                 if (Array[targetIndex] == Target) 
                 {
-                    Console.WriteLine($"The number of steps it took to reach the value is {time}");
-                    Console.WriteLine($"The value index is {targetIndex +1}");
+                    Console.WriteLine($"The number of steps it took to reach the value is {time}.");
+                    Console.WriteLine($"The value's index is {targetIndex +1}. \n");
                     break;
                 }
 
@@ -38,7 +35,7 @@
             }
             if (min > max)
             {
-            Console.WriteLine($"The number {Target} is not found");
+            Console.WriteLine($"The number {Target} was not found. \n");
             }
         }
     }
