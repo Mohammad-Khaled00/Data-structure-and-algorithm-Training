@@ -3,39 +3,33 @@
     /* The main Idea is to either Write the index of the location in the array,
        eliminate half of the array,
        or Write not Found if the array did not contain the target value */
-    internal class BinarySearch
+    public class BinarySearch<T> where T : IComparable<T>
     {
-        public BinarySearch(){}
-        public int[] Array { get; set; }
-        public int Target { get; set; }
-        public void DoBinarySearch(int[] Array, int Target)
+        public static void Search(T[] Array, T Target)
         {
             int min = 0;
             int max = Array.Length - 1;
-            double guess;
-            int targetIndex;
             int time = 0;
             while (min <= max)
             {
-                guess = (min + max) / 2;
-                targetIndex = (int)Math.Floor(guess);
+                int guess = (min + max) / 2;
                 time += 1;
-                if (Array[targetIndex] == Target) 
+                if (Array[guess].CompareTo(Target) == 0) 
                 {
                     Console.WriteLine($"The number of steps it took to reach the value is {time}.");
-                    Console.WriteLine($"The value's index is {targetIndex +1}. \n");
+                    Console.WriteLine($"The value's position is {guess + 1}. \n");
                     break;
                 }
 
-                else if (Array[targetIndex] < Target) 
-                min = targetIndex + 1;
+                else if (Array[guess].CompareTo(Target) < 0) 
+                min = guess + 1;
 
                 else
-                max = targetIndex - 1;
+                max = guess - 1;
             }
             if (min > max)
             {
-            Console.WriteLine($"The number {Target} was not found. \n");
+            Console.WriteLine($"The value {Target} was not found. \n");
             }
         }
     }
