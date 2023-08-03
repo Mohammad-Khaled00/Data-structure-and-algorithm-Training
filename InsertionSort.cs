@@ -14,15 +14,6 @@ namespace Data_structure_and_algorithm_course
             {
                 Insert(Array, i - 1, Array[i]);
             }
-
-            Console.WriteLine("The array AFTER Insertion Sorting:");
-            for (int i = 0; i < Array.Length; i++)
-            {
-                if (i != Array.Length - 1)
-                    Console.Write(Array[i] + ", ");
-                else
-                    Console.Write(Array[i] + ".\n");
-            }
         }
         private static void Insert(T[] Array, int LeftIndex, T Value)
         {

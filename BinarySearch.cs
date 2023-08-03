@@ -16,7 +16,7 @@
                 time += 1;
                 if (Array[guess].CompareTo(Target) == 0) 
                 {
-                    Console.WriteLine($"The number of steps it took to reach the value is {time}.");
+                    Console.WriteLine($"The number of steps it took to reach the value {Target} is {time} steps.");
                     Console.WriteLine($"The value's position is {guess + 1}. \n");
                     break;
                 }
