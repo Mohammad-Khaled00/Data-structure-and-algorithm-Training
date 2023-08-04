@@ -28,11 +28,15 @@ namespace Data_structure_and_algorithm_course
             #region Sorting
 
             int[] NumArray = { 22, 11, 99, 88, 9, 7, 42, 25, 74, 36, 45, 77, 0, -3, 28 };
-            string[] NameArray = { "Layla", "kamal", "tamer", "Hady", "Zyad", "fady", "dalya", "saad", "ali" };
             int[] NumArray2 = new int[NumArray.Length];
+            int[] NumArray3 = new int[NumArray.Length];
+            string[] NameArray = { "Layla", "kamal", "tamer", "Hady", "Zyad", "fady", "dalya", "saad", "ali" };
             string[] NameArray2 = new string[NameArray.Length];
+            string[] NameArray3 = new string[NameArray.Length];
             Array.Copy(NumArray, NumArray2, NumArray.Length);
+            Array.Copy(NumArray, NumArray3, NumArray.Length);
             Array.Copy(NameArray, NameArray2, NameArray.Length);
+            Array.Copy(NameArray, NameArray3, NameArray.Length);
 
             Console.WriteLine("The arrays BEFORE Sorting:");
             ArrayPrinting<int>.Print(NumArray);
@@ -65,6 +69,19 @@ namespace Data_structure_and_algorithm_course
             ArrayPrinting<int>.Print(NumArray2);
             ArrayPrinting<string>.Print(NameArray2);
             Console.WriteLine($"Time elapsed using Merge Sort: {MergeStopwatch.Elapsed} \n");
+            #endregion
+
+            #region Quick Sorting
+            Stopwatch QuickStopwatch = new();
+            QuickStopwatch.Start();
+            QuickSort<int>.Sort(NumArray3, 0, NumArray3.Length-1);
+            QuickSort<string>.Sort(NameArray3, 0, NameArray3.Length-1);
+            QuickStopwatch.Stop();
+
+            Console.WriteLine("The array AFTER Quick Sorting:");
+            ArrayPrinting<int>.Print(NumArray3);
+            ArrayPrinting<string>.Print(NameArray3);
+            Console.WriteLine($"Time elapsed using Quick Sort: {QuickStopwatch.Elapsed} \n");
             #endregion
 
             #endregion
