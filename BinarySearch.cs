@@ -10,9 +10,10 @@
             int min = 0;
             int max = Array.Length - 1;
             int time = 0;
+            int guess = 0;
             while (min <= max)
             {
-                int guess = (min + max) / 2;
+                guess = (min + max) / 2;
                 time += 1;
                 if (Array[guess].CompareTo(Target) == 0) 
                 {
@@ -29,7 +30,7 @@
             }
             if (min > max)
             {
-            Console.WriteLine($"The value {Target} was not found. \n");
+            Console.WriteLine($"The value {Target} was not found, but it can be added at index {guess + 1}. \n");
             }
         }
     }
